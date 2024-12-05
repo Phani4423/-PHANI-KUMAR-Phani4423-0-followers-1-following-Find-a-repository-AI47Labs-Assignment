@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+<title>List page</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class='container'>
+    <div class='jumbotron'>
+        
+        
+        {% if schools %}
+            <h1>List of Schools are</h1>
+            <ol>
+                {% for school in schools %}
+                    <li><a style="font-size: 30px; text-decoration: none;" href="{{school.pk}}">{{school}}</a></li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <h1>No schools to Display</h1>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

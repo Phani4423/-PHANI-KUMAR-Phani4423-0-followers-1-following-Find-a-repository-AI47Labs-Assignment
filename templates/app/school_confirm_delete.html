@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+<title>Delete page</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class='container'>
+    <div class='jumbotron'>
+        <h1>Are U sure To delete {{school}}</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" value="YES-Delete" class='btn btn-danger'>
+            <a href="{% url 'list' %}">No cancel</a>
+
+        </form>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
